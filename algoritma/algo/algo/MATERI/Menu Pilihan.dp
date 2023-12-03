@@ -1,0 +1,12 @@
+[Project]
+FileName=D:\ALgoritmaPascal\LatihanRekursifIF7\Menu Pilihan.dp
+Name=Menu Pilihan
+MainUnit=D:\ALgoritmaPascal\LatihanRekursifIF7\MenuPilihan.pas
+UnitCount=1
+ResFiles=D:\ALgoritmaPascal\LatihanRekursifIF7\rsrc.rc
+NoConsole=0
+IsDll=0
+Icon=C:\Dev-Pas\Icon\Mainicon.ico
+[Unit1]
+FileName=D:\ALgoritmaPascal\LatihanRekursifIF7\MenuPilihan.pas
+FileTime=1436396523

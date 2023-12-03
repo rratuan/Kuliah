@@ -1,0 +1,14 @@
+Algoritma Tukar Nilai
+
+{I.S. : } nilai variabel a dan b dimasukkan oleh pengguna
+{F.S. : } menampilkan hasil pertukaran nilai dari variabel a dan b
+
+Kamus : a,b :integer;
+
+
+Algoritma :input (a,b)
+
+a, b = b, a
+
+output ('nilai a sekarang : ',a)
+output ('nilai b sekarang : ',b)

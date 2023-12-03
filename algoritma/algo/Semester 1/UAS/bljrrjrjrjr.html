@@ -1,0 +1,64 @@
+<form name=form>
+    <script>
+        function proses() {
+            var KOTA = document.form.KOTA.value;
+            if (KOTA == "BANDUNG") {
+                var JUMLAH = document.form.JUMlAH.value;
+                if (document.form.KELAS[0].checked) var HARGA = 100000;
+                if (document.form.KELAS[1].checked) var HARGA = 125000;
+                if (document.form.KELAS[2].checked) var HARGA = 150000;
+            }
+            if (KOTA == "JAKARTA") {
+                var JUMLAH = document.form.JUMLAH.value;
+                if (document.form.KELAS[0].checked) var HARGA = 150000;
+                if (document.form.KELAS[1].checked) var HARGA = 175000;
+                if (document.form.KELAS[2].checked) var HARGA = 200000;
+            }
+            if (KOTA == "CIREBON") {
+                var JUMLAH = document.form.JUMLAH.value;
+                if (document.form.KELAS[0].checked) var HARGA = 200000;
+                if (document.form.KELAS[1].checked) var HARGA = 250000;
+                if (document.form.KELAS[2].checked) var HARGA = 300000;
+            }
+            var TOTAL = JUMLAH * HARGA;
+            document.form.HARGA.value = HARGA;
+            document.form.TOTAL.value = TOTAL;
+        }
+    </script>
+    <html>
+    <center>
+        <h1>JUALAN TIKET KERETA API</h1>
+        <hr>
+        <table>
+            <tr>
+                <td>Kota Tujuan
+                <td><select name="KOTA">
+                        <option>BANDUNG</option>
+                        <option>JAKARTA</option>
+                        <option>CIREBON</option>
+                    </select>
+            <tr>
+                <td>Kelas
+                <td><input type="radio" name="KELAS">EKONOMI
+            <tr>
+                <td>
+                <td><input type="radio" name="KELAS">BISNIS
+            <tr>
+                <td>
+                <td><input type="radio" name="KELAS">EKSEKUTIF
+            <tr>
+                <td>JUMLAH TIKET
+                <td><input type="text" name="JUMlAH">
+                    <hr>
+            <tr>
+                <td>HARGA TIKET
+                <td><input type="text" name="HARGA">
+            <tr>
+                <td>TOTAL
+                <td><input type="text" name="TOTAL">
+        </table>
+        <hr>
+        <input type="button" value=proses onclick="proses()">
+        <input type="reset" value=reset>
+
+    </html>
