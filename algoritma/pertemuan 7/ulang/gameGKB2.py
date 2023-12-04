@@ -14,6 +14,7 @@ while not gameOver:
         # komputer memilih
         komputer = random.choice(['G','K','B'])
         # pemain memilih
+        print('Anda Dikasih Kesempatan Sebanyak 3 Kali Kalah')
         pemain = input('Komputer sudah memilih.\nSekarang giliran anda,silahkan masukkan pilihan anda [G/K/B]: ').upper()
         print('-'*30)
         # rules game
@@ -28,6 +29,7 @@ while not gameOver:
                 print(f'Komputer memilih {komputer} dan anda memilih {pemain},jadi ANDA KALAH!')
                 # kesempatan jadi bertambah sampai habis
                 kesempatan += 1
+                print(f'Kesempatan anda : {kesempatan}')
                 # score bertambah
                 scoreKomputer += 1
         elif pemain == 'K':
@@ -35,6 +37,7 @@ while not gameOver:
                 print(f'Komputer memilih {komputer} dan anda memilih {pemain},jadi ANDA KALAH!')
                 # kesempatan jadi bertambah sampai habis
                 kesempatan += 1
+                print(f'Kesempatan anda : {kesempatan}')
                 # score bertambah
                 scoreKomputer += 1
             elif komputer == 'B':
@@ -46,6 +49,7 @@ while not gameOver:
                 print(f'Komputer memilih {komputer} dan anda memilih {pemain},jadi ANDA KALAH!')
                 # kesempatan jadi bertambah sampai habis
                 kesempatan += 1
+                print(f'Kesempatan anda : {kesempatan}')
                 # score bertambah
                 scoreKomputer += 1
             elif komputer == 'G':
