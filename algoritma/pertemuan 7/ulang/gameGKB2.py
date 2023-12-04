@@ -10,53 +10,31 @@ scoreKomputer = 0
 
 # masuk ke perulangan
 while not gameOver:
+    print('-'*50)
+    print('| Anda Dikasih Kesempatan Sebanyak 3 Kali Kalah |')
+    print('-'*50)
+    
     while kesempatan < 3:
         # komputer memilih
         komputer = random.choice(['G','K','B'])
         # pemain memilih
-        print('Anda Dikasih Kesempatan Sebanyak 3 Kali Kalah')
         pemain = input('Komputer sudah memilih.\nSekarang giliran anda,silahkan masukkan pilihan anda [G/K/B]: ').upper()
-        print('-'*30)
+        print('-'*50)
         # rules game
         if pemain == komputer:
             print('Draw!')
-        elif pemain == 'G':
-            if komputer == 'K':
-                print(f'Komputer memilih {komputer} dan anda memilih {pemain},jadi ANDA MENANG!')
-                # score bertambah
-                scorePemain += 1
-            elif komputer == 'B':
-                print(f'Komputer memilih {komputer} dan anda memilih {pemain},jadi ANDA KALAH!')
-                # kesempatan jadi bertambah sampai habis
-                kesempatan += 1
-                print(f'Kesempatan anda : {kesempatan}')
-                # score bertambah
-                scoreKomputer += 1
-        elif pemain == 'K':
-            if komputer == 'G':
-                print(f'Komputer memilih {komputer} dan anda memilih {pemain},jadi ANDA KALAH!')
-                # kesempatan jadi bertambah sampai habis
-                kesempatan += 1
-                print(f'Kesempatan anda : {kesempatan}')
-                # score bertambah
-                scoreKomputer += 1
-            elif komputer == 'B':
-                print(f'Komputer memilih {komputer} dan anda memilih {pemain},jadi ANDA MENANG!')
-                # score bertambah
-                scorePemain += 1
-        elif pemain == 'B':
-            if komputer == 'K':
-                print(f'Komputer memilih {komputer} dan anda memilih {pemain},jadi ANDA KALAH!')
-                # kesempatan jadi bertambah sampai habis
-                kesempatan += 1
-                print(f'Kesempatan anda : {kesempatan}')
-                # score bertambah
-                scoreKomputer += 1
-            elif komputer == 'G':
-                print(f'Komputer memilih {komputer} dan anda memilih {pemain},jadi ANDA MENANG!')
-                # score bertambah
-                scorePemain += 1
-    
+        elif (pemain == 'G' and komputer == 'K') or (pemain == 'K' and komputer == 'B') or (pemain == 'B' and komputer == 'G'):
+            print(f'Komputer memilih {komputer} dan anda memilih {pemain},jadi ANDA MENANG!')
+            # score bertambah
+            scorePemain += 1
+        else:
+            print(f'Komputer memilih {komputer} dan anda memilih {pemain},jadi ANDA KALAH!')
+            # kesempatan jadi bertambah sampai habis
+            kesempatan += 1
+            print(f'Kesempatan anda : {kesempatan}')
+            # score bertambah
+            scoreKomputer += 1
+
     # perhitungan score
     if scorePemain == scoreKomputer:
         hasil = 'Draw'
@@ -66,11 +44,11 @@ while not gameOver:
         hasil = 'Maaf,Anda Kalah dalam Game kali ini!'
 
     # kondisi ketika kesempatan udah abis
-    print('-'*30)
+    print('-'*50)
     print('Game Over')
     print(f'Dengan Score {scorePemain} : {scoreKomputer}')
     print(hasil)
-    print('-'*30)
+    print('-'*50)
     
     # ketika user ingin bermain lagi
     ulang = input('Mau main lagi [Y/N]? ').upper()
@@ -83,7 +61,7 @@ while not gameOver:
         scorePemain = 0
         scoreKomputer = 0
     else:
-        print('Terima Kasih sudah bermain!')
+        print(' Terima Kasih sudah bermain! '.center(50,'-'))
         # keluar dari looping
         break
     
