@@ -14,7 +14,7 @@ while not gameOver:
         # komputer memilih
         komputer = random.choice(['G','K','B'])
         # pemain memilih
-        pemain = input('Komputer sudah memilih.\nSekarang giliran anda,silahkan masukkan pilihan anda [G/K/B]: ')
+        pemain = input('Komputer sudah memilih.\nSekarang giliran anda,silahkan masukkan pilihan anda [G/K/B]: ').upper()
         print('-'*30)
         # rules game
         if pemain == komputer:
@@ -69,7 +69,7 @@ while not gameOver:
     print('-'*30)
     
     # ketika user ingin bermain lagi
-    ulang = input('Mau main lagi [Y/N]? ')
+    ulang = input('Mau main lagi [Y/N]? ').upper()
     if ulang == 'Y':
         # set game over agar true
         gameOver = False
