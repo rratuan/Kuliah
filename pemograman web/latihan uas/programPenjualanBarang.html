@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Penjualan Barang</title>
+</head>
+<body>
+    <center>
+        <form name="myForm">
+            <h1>PROGRAM PENJUALAN BARANG</h1>
+            <hr>
+            <table>
+                <!-- input section -->
+                <tr><td>Nama Barang</td><td>:</td><td><input type="text" name="nama_barang"></td></tr>
+                <tr><td>Harga</td><td>:</td><td><input type="text" name="harga"></td></tr>
+                <tr><td>Jumlah</td><td>:</td><td><input type="text" name="jumlah"></td></tr>
+                <!-- output section -->
+                <tr><td>Total</td><td>:</td><td><input type="text" name="total"></td></tr>
+                <tr><td>Diskon</td><td>:</td><td><input type="text" name="diskon"></td></tr>
+                <tr><td>Bayar</td><td>:</td><td><input type="text" name="bayar"></td></tr>
+            </table>
+            <hr>
+            <!-- button submit and reset -->
+            <input type="button" value="proses" onclick="proses()">
+            <input type="reset" value="reset" onclick="reset()">
+        </form>
+        </center>
+        <!-- logic -->
+        <script>
+            function proses() {
+                let harga = parseInt(document.myForm.harga.value);
+                let jumlah = parseInt(document.myForm.jumlah.value);
+                let total = harga * jumlah;
+                let diskon;
+                let bayar;
+
+                if (total > 50000 && total < 100000 ) {
+                    diskon = 0.1;
+                    bayar = total - (total * diskon);
+                }
+                else if (total > 100000 && total < 150000) {
+                    diskon = 0.2;
+                    bayar = total - (total * diskon);
+                }
+                else if (total > 150000) {
+                    diskon = 0.3;
+                    bayar = total - (total * diskon);
+                }
+                else {
+                    diskon = 0;
+                    bayar = total - (total * diskon);
+                }
+
+                document.myForm.total.value = total;   
+                document.myForm.diskon.value = diskon;
+                document.myForm.bayar.value = bayar;
+            }
+        </script>
+</body>
+</html>

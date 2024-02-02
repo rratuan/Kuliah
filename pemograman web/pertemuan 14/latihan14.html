@@ -1,0 +1,158 @@
+<form name=form>
+<script>
+function proses()
+{
+	let kota=document.form.kota.value;
+	let kurir=document.form.kurir.value;
+	let jenis=document.form.jenis.value
+	let berat=document.form.berat.value
+	
+	if(kota == "BANDUNG"){
+		if(kurir == "JNE"){
+			if(jenis == "Ekonomi"){
+				var harga = 5000;
+			}
+			if(jenis == "Reguler"){
+				var harga = 6000;
+			}
+			if(jenis == "Kilat"){
+				var harga = 7000;
+			}
+		}
+		if(kurir == "TIKI"){
+			if(jenis == "Ekonomi"){
+				var harga = 6000;
+			}
+			if(jenis == "Reguler"){
+				var harga = 7000;
+			}
+			if(jenis == "Kilat"){
+				var harga = 8000;
+			}
+		}
+		if(kurir == "ANTERAJA"){
+			if(jenis == "Ekonomi"){
+				var harga = 7000;
+			}
+			if(jenis == "Reguler"){
+				var harga = 8000;
+			}
+			if(jenis == "Kilat"){
+				var harga = 9000;
+			}
+		}
+	}
+	if(kota == "JAKARTA"){
+		if(kurir == "JNE"){
+			if(jenis == "Ekonomi"){
+				var harga = 6000;
+			}
+			if(jenis == "Reguler"){
+				var harga = 7000;
+			}
+			if(jenis == "Kilat"){
+				var harga = 8000;
+			}
+		}
+		if(kurir == "TIKI"){
+			if(jenis == "Ekonomi"){
+				var harga = 7000;
+			}
+			if(jenis == "Reguler"){
+				var harga = 8000;
+			}
+			if(jenis == "Kilat"){
+				var harga = 9000;
+			}
+		}
+		if(kurir == "ANTERAJA"){
+			if(jenis == "Ekonomi"){
+				var harga = 8000;
+			}
+			if(jenis == "Reguler"){
+				var harga = 9000;
+			}
+			if(jenis == "Kilat"){
+				var harga = 10000;
+			}
+		}
+	}
+	if(kota == "SURABAYA"){
+		if(kurir == "JNE"){
+			if(jenis == "Ekonomi"){
+				var harga = 7000;
+			}
+			if(jenis == "Reguler"){
+				var harga = 8000;
+			}
+			if(jenis == "Kilat"){
+				var harga = 9000;
+			}
+		}
+		if(kurir == "TIKI"){
+			if(jenis == "Ekonomi"){
+				var harga = 8000;
+			}
+			if(jenis == "Reguler"){
+				var harga = 9000;
+			}
+			if(jenis == "Kilat"){
+				var harga = 10000;
+			}
+		}
+		if(kurir == "ANTERAJA"){
+			if(jenis == "Ekonomi"){
+				var harga = 9000;
+			}
+			if(jenis == "Reguler"){
+				var harga = 10000;
+			}
+			if(jenis == "Kilat"){
+				var harga = 11000;
+			}
+		}
+	}
+	
+	total = harga * berat;
+	document.form.harga.value = harga;
+	document.form.total.value = total;
+}
+</script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+
+<div class="w3-container w3-animate-zoom">
+	<div class="w3-panel w3-red w3-card-4" >
+		<center><h1>PENGIRIMAN PAKET</h1></center>
+	</div>
+	
+	<div class="w3-panel w3-yellow w3-card-4" >
+		<center><br>
+		<table>
+			<tr><td>Kota Tujuan<td><select class="w3-select" name="kota">
+				<option>BANDUNG
+				<option>JAKARTA
+				<option>SURABAYA
+			<tr><td>Kurir<td><select class="w3-select" name="kurir">
+				<option>JNE
+				<option>TIKI
+				<option>ANTERAJA
+			<tr><td>Jenis<td><input class="w3-radio" type="radio" name="jenis" value="Ekonomi">Ekonomi
+			<tr><td><td><input class="w3-radio" type="radio" name="jenis" value="Reguler">Reguler
+			<tr><td><td><input class="w3-radio" type="radio" name="jenis" value="Kilat">Kilat
+			<tr><td>Berat <td><input class="w3-input" type="text" name="berat"><td>Kg</td>
+			<tr><td>Harga <td><input class="w3-input" type="text" name="harga">
+			<tr><td>Total <td><input class="w3-input" type="text" name="total">
+		</center><br>
+		</table>
+	</div>
+	
+	<div class="w3-panel w3-blue w3-card-4" >
+		<center><br>
+		<input type="button" class="w3-button w3-red" style="width:200" value="PROSES" onclick="proses()">
+		<input type="reset" class="w3-button w3-orange" style="width:200" value="RESET" onclick="reset()">
+		</center><br>
+	</div>
+</div>

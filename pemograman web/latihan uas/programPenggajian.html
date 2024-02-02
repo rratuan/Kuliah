@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Penggajian</title>
+</head>
+<body>
+    <center>
+        <form name="myForm">
+            <h1>PROGRAM PENGGAJIAN PT.SATU MALAM 2 CINTA</h1>
+            <hr>
+            <table>
+                <!-- input section -->
+                <tr><td>Nama Pegawai</td><td>:</td><td><input type="text" name="pegawai"></td></tr>
+                <tr><td>Jam Kerja per Hari</td><td>:</td><td><input type="text" name="jam_kerja"></td></tr>
+                <tr><td>Upah per Jam</td><td>:</td><td><input type="text" name="upah"></td></tr>
+                <tr><td>Jumlah Anak</td><td>:</td><td><input type="text" name="anak"></td></tr>
+                <tr><td>Gaji</td><td>:</td><td><input type="text" name="gaji"></td></tr>
+                <!-- output section -->
+                <tr><td>Tunjangan Anak (10%)</td><td>:</td><td><input type="text" name="tunjangan"></td></tr>
+                <tr><td>Total Gaji</td><td>:</td><td><input type="text" name="total_gaji"></td></tr>
+            </table>
+            <hr>
+            <!-- button proses and reset -->
+            <input type="button" value="proses" onclick="proses()">
+            <input type="reset" value="reset" onclick="reset()">
+        </form>
+    </center>
+    <!-- logic -->
+    <script>
+        function proses() {
+            let jam_kerja = parseInt(document.myForm.jam_kerja.value);
+            let upah = parseFloat(document.myForm.upah.value);
+            let anak = parseInt(document.myForm.anak.value);
+            let gaji;
+            let tunjangan;
+            let total_gaji;
+
+            gaji = (jam_kerja * upah) * 30;
+            if (anak <= 3) {
+                tunjangan = 0.1 * anak;
+                total_gaji = gaji + (gaji * tunjangan);
+            }
+            else if (anak > 3) {
+                tunjangan = 0.3;
+                total_gaji = gaji + (gaji * tunjangan);
+            }
+            else{
+                tunjangan = 0
+                total_gaji = gaji + (gaji * tunjangan);
+            }
+
+            document.myForm.gaji.value = gaji;
+            document.myForm.tunjangan.value = tunjangan;
+            document.myForm.total_gaji.value = total_gaji;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/w3.css">
+    <title>Program Gaji</title>
+</head>
+<body>
+    <form name="form">
+        <div class="w3-container w3-animate-zoom">
+            <div class="w3-panel w3-red w3-card-4" >
+                <center><h1>PROGRAM GAJI PEGAWAI</h1></center>
+            </div>
+            
+            <div class="w3-panel w3-yellow w3-card-4" >
+                <center><br>
+                <table>
+                    <tr><td>Nama Pegawai <td><input class="w3-input" type="text" name="namapegawai">
+                    <tr><td>Bagian<td><select class="w3-select" name="bagian">
+                    <option value="keuangan">Keuangan
+                    <option value="produksi">Produksi
+                    <option value="pemasaran">Pemasaran
+                    <tr><td>Golongan</td><td><input class="w3-radio" type="radio" name="golongan" value="a">A</td>
+                    <tr><td></td><td><input class="w3-radio" type="radio" name="golongan" value="b">B</td>
+                    <tr><td></td><td><input class="w3-radio" type="radio" name="golongan" value="c">C</td>
+                    <tr><td>Tunjangan</td><td><input class="w3-check" type="checkbox" name="makan">Makan</td>
+                    <tr><td></td><td><input class="w3-check" type="checkbox" name="kesehatan">Kesehatan</td>
+                    <tr><td></td><td><input class="w3-check" type="checkbox" name="keluarga">Keluarga</td>
+                    <tr><td>Jumlah Anak</td><td><input type="text" name="anak"></td></tr>
+                    <tr><td colspan=2><hr>
+                    <tr><td>Gaji Pokok <td><input class="w3-input" type="text" name="gajipokok">
+                    <tr><td>Tunjangan<td><input class="w3-input" type="text" name="tunjangan">
+                    <tr><td>Tunjangan Anak <td><input class="w3-input" type="text" name="tunjanganAnak">
+                    <tr><td>Total Gaji <td><input class="w3-input" type="text" name="total">
+                </center><br>
+                </table>
+            </div>
+            
+            <div class="w3-panel w3-blue w3-card-4" >
+                <center><br>
+                <input type="button" class="w3-button w3-red" style="width:200" value="proses" onclick="proses()">
+                <input type="reset" class="w3-button w3-orange" style="width:200" value="reset" onclick="reset()">
+                </center><br>
+            </div>
+        </div>
+    </form>
+    <script>
+        function proses() {
+            let bagian = document.form.bagian.value;
+            let golongan = document.form.golongan.value;
+            let anak = parseInt(document.form.anak.value);
+            let gajipokok;
+            let tunjanganAnak;
+            let tunjangan = 0;
+            let totalgaji;
+
+            if (bagian == "keuangan") {
+                if (golongan == "a") {
+                    gajipokok = 5000000;
+                }
+                else if (golongan = "b") {
+                    gajipokok = 6000000;
+                }
+                else if (golongan = "c") {
+                    gajipokok = 7000000;
+                }  
+            }
+            else if (bagian == "produksi") {
+                if (golongan == "a") {
+                    gajipokok = 4000000;
+                }
+                else if (golongan = "b") {
+                    gajipokok = 5000000;
+                }
+                else if (golongan = "c") {
+                    gajipokok = 6000000;
+                }  
+            }
+            else if (bagian == "pemasaran") {
+                if (golongan == "a") {
+                    gajipokok = 3000000;
+                }
+                else if (golongan = "b") {
+                    gajipokok = 4000000;
+                }
+                else if (golongan = "c") {
+                    gajipokok = 5000000;
+                }  
+            }
+
+            if (document.form.makan.checked) {
+                tunjangan = tunjangan + (gajipokok * 0.1);
+            }
+            if (document.form.kesehatan.checked) {
+                tunjangan = tunjangan + (gajipokok * 0.2);
+            }
+            if (document.form.keluarga.checked) {
+                tunjangan = tunjangan + (gajipokok * 0.3);
+            }
+
+            if (anak > 3) {
+                tunjanganAnak = gajipokok * 0.3;
+            }
+            else if (anak <= 3) {
+                tunjanganAnak = gajipokok * (anak * 0.1);
+            }
+            
+            totalgaji = gajipokok + tunjangan + tunjanganAnak;
+
+            document.form.gajipokok.value = gajipokok;
+            document.form.tunjangan.value = tunjangan;
+            document.form.tunjanganAnak.value = tunjanganAnak;
+            document.form.total.value = totalgaji;
+        }
+    </script>
+</body>
+</html>

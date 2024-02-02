@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Penjualan Motor</title>
+</head>
+<body>
+    <center>
+        <form name="myForm">
+            <h1>PROGRAM PENJUALAN MOTOR</h1>
+            <hr>
+            <table>
+                <!-- input section -->
+                <tr><td>Merk Motor</td><td>:</td><td><select name="merk">
+                    <option value="honda">Honda</option>
+                    <option value="yamaha">Yamaha</option>
+                    <option value="suzuki">Suzuki</option>
+                </select></td></tr>
+                <tr><td>Aksesoris</td><td>:</td><td><input type="checkbox" name="velg">Velg Racing</td></tr>
+                    <tr><td></td><td></td><td><input type="checkbox" name="helm">Helm</td></tr>
+                    <tr><td></td><td></td><td><input type="checkbox" name="jaket">Jaket</td></tr>
+                <tr><td>Cara Pembayaran</td><td>:</td><td><input type="radio" name="pembayaran" value="tunai">Tunai
+                    <tr><td></td><td></td><td><input type="radio" name="pembayaran" value="kredit">Kredit
+                <!-- output section -->
+                <tr><td>Harga</td><td>:</td><td><input type="text" name="harga"></td></tr>
+                <tr><td>Bunga</td><td>:</td><td><input type="text" name="bunga"></td></tr>
+                <tr><td>Total</td><td>:</td><td><input type="text" name="total"></td></tr>
+            </table>
+            <hr>
+            <!-- button proses and reset -->
+            <input type="button" value="proses" onclick="proses()">
+            <input type="reset" value="reset" onclick="reset()">
+        </form>
+    </center>
+    <!-- logic -->
+    <script>
+        function proses() {
+            let merk = document.myForm.merk.value;
+            let pembayaran = document.myForm.pembayaran.value;
+            let harga = 0;
+            let bunga;
+            let total;
+
+            // harga merk motor
+            if (merk == "honda") {
+                harga = 15000000;
+            }
+            else if (merk == "yamaha") {
+                harga = 14000000;
+            }
+            else if (merk == "suzuki") {
+                harga = 13000000;
+            }
+
+            // harga merk motor + aksesoris yang dibeli
+            if (document.myForm.velg.checked) {
+                harga = harga + 450000;
+            }
+            if (document.myForm.helm.checked) {
+                harga = harga + 250000;
+            }
+            if (document.myForm.jaket.checked) {
+                harga = harga + 300000;
+            }
+
+            // tunai = diskon 10% , kredit = bunga 15%
+            if (pembayaran == "tunai") {
+                bunga = 0
+                total = harga - (0.1 * harga);
+            }
+            else {
+                bunga = 0.15 * harga
+                total = harga + bunga;
+            }
+
+            document.myForm.harga.value = harga;
+            document.myForm.bunga.value = bunga;
+            document.myForm.total.value = total;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/w3.css">
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body style="background-color: #eff0f3;">
+    <!-- banner -->
+    <div class="container" style="position: fixed;width: 100%;top: 0;z-index: 999999;">
+        <button onclick="openMenu('Menu_Utama')" style="margin: 0;padding: 0;"><img src="banner.png" style="width: 100%;"></button>
+    </div>
+    <!-- navbar -->
+    <div class="w3-bar" style="background-color: #ff8e3c;margin-top: 7%;padding: 5px;">
+        <button class="w3-bar-item w3-button" onclick="openMenu('Appetizer')">Appetizer</button>
+        <button class="w3-bar-item w3-button" onclick="openMenu('Main_Course')">Main Course</button>
+        <button class="w3-bar-item w3-button" onclick="openMenu('Dessert')">Dessert</button>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button">Jajanan</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4 w3-round-xlarge">
+                <button class="w3-bar-item w3-button" onclick="openMenu('Seblak')">Seblak</button>
+                <button class="w3-bar-item w3-button" onclick="openMenu('Cireng')">Cireng</button>                <!-- tombol virus macro -->
+                <button class="w3-bar-item w3-button" onclick="openMenu('Cimol')">Cimol</button>
+            </div>
+        </div>
+    </div>
+    <!-- Menu Utama -->
+    <div class="container">
+        <center>
+        <!-- Halaman Utama -->
+        <div class="background hidangan" id="Menu_Utama">
+            <img src="background3.png" style="width: 100%;height: auto;">
+        </div>
+        <!-- Menu Appetizer -->
+        <div id="Appetizer" class="w3-container hidangan w3-animate-fading" style="display: none; background-color: #eff0f3;">
+            <!-- Soup -->
+            <div class="w3-card-4 w3-round-xlarge" style="width: 30%;margin: 20px;background-color: #fffffe;">
+                <div class="w3-container w3-center" style="padding-bottom: 20px;">
+                    <h3>Soup</h3>
+                    <img class="w3-round-xxlarge" src="soup.webp"style="width:80%">
+                    <h5>Rp 50.000,00</h5>
+                    <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+                </div>
+            </div>
+            <!-- Cocktail -->
+            <div class="w3-card-4 w3-round-xlarge" style="width: 30%;margin: 20px; background-color: #fffffe;">
+                <div class="w3-container w3-center" style="padding-bottom: 20px;">
+                    <h3>Cocktail</h3>
+                    <img class="w3-round-xxlarge" src="coctail.webp"style="width:80%">
+                    <h5>Rp 100.000,00</h5>
+                    <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+                </div>
+            </div>
+            <!-- Salad -->
+            <div class="w3-card-4 w3-round-xlarge" style="width: 30%;margin: 20px;background-color: #fffffe;">
+                <div class="w3-container w3-center" style="padding-bottom: 20px;">
+                    <h3>Salad</h3>
+                    <img class="w3-round-xxlarge" src="salad.webp"style="width:80%">
+                    <h5>Rp 70.000,00</h5>
+                    <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+                </div>
+            </div>
+            </center>
+        </div>
+        <!-- Menu Main Course -->
+        <div id="Main_Course" class="w3-container hidangan w3-animate-bottom" style="display: none;background-color: #eff0f3;">
+            <center>
+            <!-- Lasagna Panggang -->
+            <div class="w3-card-4 w3-round-xlarge" style="width: 30%;margin: 20px; background-color: #fffffe;">
+                <div class="w3-container w3-center" style="padding-bottom: 20px;">
+                    <h3>Lasagna Panggang</h3>
+                    <img class="w3-round-xxlarge" src="lasagna panggang.jpg"style="width:80%">
+                    <h5>Rp 60.000,00</h5>
+                    <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+                </div>
+            </div>
+            <!-- Tagliatelle Pasta -->
+            <div class="w3-card-4 w3-round-xlarge" style="width: 30%;margin: 20px;background-color: #fffffe;">
+                <div class="w3-container w3-center" style="padding-bottom: 20px;">
+                    <h3>Tagliatelle Pasta</h3>
+                    <img class="w3-round-xxlarge" src="pasta.jpg"style="width:80%">
+                    <h5>Rp 50.000,00</h5>
+                    <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+                </div>
+            </div>
+            <!-- Ikan Bakar Dabu Dabu -->
+            <div class="w3-card-4 w3-round-xlarge" style="width: 30%;margin: 20px; background-color: #fffffe;">
+                <div class="w3-container w3-center" style="padding-bottom: 20px;">
+                    <h3>Ikan Bakar Sambel Dabu-Dabu</h3>
+                    <img class="w3-round-xxlarge" src="ikan bakar.jpg"style="width:80%">
+                    <h5>Rp 100.000,00</h5>
+                    <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+                </div>
+            </div>
+            </center>
+        </div>
+        <!-- Menu Dessert -->
+        <div id="Dessert" class="w3-container hidangan w3-animate-top" style="display: none; background-color: #eff0f3;">
+            <center>
+            <!-- Gram Cafe & Pancakes -->
+            <div class="w3-card-4 w3-round-xlarge" style="width: 30%;margin: 20px;background-color: #fffffe;">
+                <div class="w3-container w3-center" style="padding-bottom: 20px;">
+                    <h3>Gram Cafe & Pancakes</h3>
+                    <img class="w3-round-xxlarge" src="pancakes.webp"style="width:80%">
+                    <h5>Rp 80.000,00</h5>
+                    <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+                </div>
+            </div>
+            <!-- Saint Cinnamon & Coffe -->
+            <div class="w3-card-4 w3-round-xlarge" style="width: 30%;margin: 20px;background-color: #fffffe;">
+                <div class="w3-container w3-center" style="padding-bottom: 20px;">
+                    <h3>Saint Cinnamon & Coffe</h3>
+                    <img class="w3-round-xxlarge" src="cinnamon.webp"style="width:80%">
+                    <h5>Rp 50.000,00</h5>
+                    <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+                </div>
+            </div>
+            <!-- Godiva -->
+            <div class="w3-card-4 w3-round-xlarge" style="width: 30%;margin: 20px;background-color: #fffffe;">
+                <div class="w3-container w3-center" style="padding-bottom: 20px;">
+                    <h3>Godiva</h3>
+                    <img class="w3-round-xxlarge" src="godiva.webp"style="width:80%">
+                    <h5>Rp 30.000,00</h5>
+                    <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+                </div>
+            </div>
+            </center>
+        </div>
+        <!-- Menu Jajanan -->
+        <center>
+        <!-- Seblak -->
+        <div id="Seblak" class="w3-container hidangan w3-animate-zoom w3-round-xlarge" style="display: none; width: 50%; background-color: #fffffe; margin: 20px;">
+            <h2>Seblak</h2>
+            <img class="w3-round-xxlarge" src="seblak.webp" style="width: 50%;">
+            <h5>Toping :</h5>
+            <form class="w3-container" action="action_page.php" style="display: inline-block;text-align: left;">
+                <p>
+                    <input class="w3-check" type="checkbox" name="kerupuk">
+                    <label>Kerupuk</label>
+                </p>
+                <p>
+                    <input class="w3-check" type="checkbox" name="makaroni">
+                    <label>Makaroni</label>
+                </p>
+                <p>
+                    <input class="w3-check" type="checkbox" name="mie">
+                    <label>Mie</label>
+                </p>
+                <p>
+                    <input class="w3-check" type="checkbox" name="sosis">
+                    <label>Sosis</label>
+                </p>
+                <p>
+                    <input class="w3-check" type="checkbox" name="pangsit">
+                    <label>Pangsit</label>
+                </p>
+                <p>
+                    <input class="w3-check" type="checkbox" name="dumpling">
+                    <label>Dumpling</label>
+                </p>
+                <button class="w3-btn w3-round-xxlarge" style="margin: 20px;background-color: #ff8e3c;">Order</button>
+            </form>
+        </div>
+        <!-- Cireng -->
+        <div id="Cireng" class="w3-container hidangan w3-animate-zoom" style="display: none;background-color: #eff0f3;">
+            <!-- Cireng Kriuk -->
+            <div class="w3-card-4 w3-round-xlarge" style="width: 30%;margin: 20px; background-color: #fffffe;">
+                <div class="w3-container w3-center" style="padding-bottom: 20px;">
+                    <h3>Cireng Kriuk</h3>
+                    <img class="w3-round-xxlarge" src="cireng kriuk.webp"style="width:80%">
+                    <h5>Rp 15.000,00</h5>
+                    <h6>Cireng dengan tekstur garing di luar dan kenyal di dalam,disajikan dengan saus kacang lezat.</h6>
+                    <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+                </div>
+            </div>
+            <!-- Cireng Kuah -->
+            <div class="w3-card-4 w3-round-xlarge" style="width: 30%;margin: 20px;background-color: #fffffe;">
+                <div class="w3-container w3-center" style="padding-bottom: 20px;">
+                    <h3>Cireng Kuah</h3>
+                    <img class="w3-round-xxlarge" src="cireng kuah.jpg"style="width:80%">
+                    <h5>Rp 15.000,00</h5>
+                    <h6>Cireng dengan kuah jeletot yang ditaburi daun bawang segar.</h6>
+                    <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+                </div>
+            </div>
+        </div>
+        <!-- Cimol -->
+        <div id="Cimol" class="w3-container hidangan w3-animate-zoom w3-round-xlarge" style="display: none; width: 50%;padding-bottom: 20px; margin: 20px;background-color: #fffffe;">
+            <h2>Cimol</h2>
+            <img class="w3-round-xxlarge" src="cimol.jpg" style="width: 50%;">
+            <h5>Rp 10.000,00</h5>
+            <button class="w3-button w3-round-xxlarge" style="background-color: #ff8e3c;">Order</button>
+        </div>
+        </center>
+    </div>
+
+    <!-- logic -->
+    <script>
+        function openMenu(namaHidangan){
+        var i;
+        var x = document.getElementsByClassName("hidangan");
+        for (i = 0; i < x.length; i++){
+            x[i].style.display = "none";
+        }
+        document.getElementById(namaHidangan).style.display = "block";
+    }
+    </script>
+</body>
+</html>

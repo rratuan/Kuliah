@@ -1,0 +1,67 @@
+<form name=form>
+<script>
+function proses()
+{
+	let jabatan=document.form.jabatan.value;
+	if(jabatan == "MANAGER") var gajipokok=10000000;
+	if(jabatan == "OB") var gajipokok=3000000;
+	if(jabatan == "HRD") var gajipokok=8000000;
+	if(jabatan == "PEMASARAN") var gajipokok=7000000;
+	document.form.gajipokok.value=gajipokok;
+	
+	lamakerja=document.form.lamakerja.value;
+	var bonus=0.1 * gajipokok * lamakerja;
+	document.form.bonus.value=bonus;
+	
+	
+	var tunjangan=0;
+	if(document.form.makan.checked) tunjangan=tunjangan + (0.1*gajipokok);
+	if(document.form.transport.checked) tunjangan=tunjangan + (0.2*gajipokok);
+	if(document.form.anak.checked) tunjangan=tunjangan + (0.25*gajipokok);
+	if(document.form.istri.checked) tunjangan=tunjangan + (0.3*gajipokok);
+	document.form.tunjangan.value=tunjangan;
+	
+	var total=gajipokok + bonus + tunjangan;
+	document.form.total.value=total;
+}
+</script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+
+<div class="w3-container w3-animate-zoom">
+	<div class="w3-panel w3-red w3-card-4" >
+		<center><h1>PROGRAM GAJI</h1></center>
+	</div>
+	
+	<div class="w3-panel w3-yellow w3-card-4" >
+		<center><br>
+		<table>
+			<tr><td>Nama Pegawai <td><input class="w3-input" type="text" name="namapegawai">
+			<tr><td>Jabatan<td><select class="w3-select" name="jabatan">
+			<option>MANAGER
+			<option>HRD
+			<option>PEMASARAN
+			<option>OB
+			<tr><td>Lama Kerja<td><input class="w3-radio" type="radio" name="lamakerja" value=1>1 Tahun
+			<tr><td><td><input class="w3-radio" type="radio" name="lamakerja" value=2>2 Tahun
+			<tr><td><td><input class="w3-radio" type="radio" name="lamakerja" value=3>3 Tahun
+			<tr><td>Tunjangan<td><input class="w3-check" type="checkbox" name=makan>Makan<td><input class="w3-check" type="checkbox" name=anak>Anak
+			<tr><td><td><input class="w3-check" type="checkbox" name=transport>Transport<td><input class="w3-check" type="checkbox" name=istri>Istri
+			<tr><td colspan=2><hr>
+			<tr><td>Gaji Pokok <td><input class="w3-input" type="text" name="gajipokok">
+			<tr><td>Bonus <td><input class="w3-input" type="text" name="bonus">
+			<tr><td>Tunjangan <td><input class="w3-input" type="text" name="tunjangan">
+			<tr><td>Total <td><input class="w3-input" type="text" name="total">
+		</center><br>
+		</table>
+	</div>
+	
+	<div class="w3-panel w3-blue w3-card-4" >
+		<center><br>
+		<input type="button" class="w3-button w3-red" style="width:200" value="PROSES" onclick="proses()">
+		<input type="reset" class="w3-button w3-orange" style="width:200" value="RESET" onclick="reset()">
+		</center><br>
+	</div>
+</div>

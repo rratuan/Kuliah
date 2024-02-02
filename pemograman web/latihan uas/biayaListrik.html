@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biaya Tagihan Listrik</title>
+</head>
+<body>
+    <center>
+        <form name="myForm">
+            <h1>Menghitung Biaya Tagihan Listrik</h1>
+            <h2>PLN BANDUNG</h2>
+            <hr>
+            <table>
+                <!-- input section -->
+                <tr><td>Nama Pelanggan</td><td>:</td><td><input type="text" name="nama"></td></tr>
+                <tr><td>Kategori</td><td>:</td><td><select name="kategori">
+                    <option value="sosial">Sosial</option>
+                    <option value="rumah">Rumah</option>
+                    <option value="industri">Industri</option>
+                </select></td></tr>
+                <tr><td>Jumlah Pemakaian Listrik</td><td>:</td><td><input type="text" name="pemakaian"></td></tr>          
+            </table>
+            <hr>
+            <!-- button proses and reset -->
+            <input type="button" value="proses" onclick="proses()">
+            <input type="reset" value="reset" onclick="reset(hapus())">
+        </form>
+        <!-- output rincian tagihan -->
+        <div id="output"></div>
+    </center>
+    <!-- logic -->
+    <script>
+        // memanggil elemen div rincian tagihan
+        let outputDiv = document.getElementById("output");
+
+        function proses() {
+            let kategori = document.myForm.kategori.value;
+            let pemakaian = parseInt(document.myForm.pemakaian.value);
+            let abodemen;
+            let tarifperKWH;
+            let pajak;
+            let SubTotal;
+
+            // pengkategorian
+            if (kategori == "sosial") {
+                abodemen = 10000;
+                tarifperKWH = 300;
+                pajak = 0;
+            }
+            else if (kategori == "rumah") {
+                abodemen = 30000;
+                tarifperKWH = 500;
+                pajak = 0.1;
+            }
+            else if (kategori == "industri") {
+                abodemen = 50000;
+                tarifperKWH = 1000;
+                pajak = 0.3;
+            }
+
+            // membuat tampilan rincian tagihan di elemen html
+            outputDiv.innerHTML = `
+                <h3>Rincian Tagihan</h3>
+                <table cellpadding="7">
+                    <tr><th>Jumlah</th><th>Tarif per KWH</th><th>Abodemen</th><th>Sub Total</th></tr>
+                </table>
+            `;
+            
+            // looping rincian tagian sesuai jumlah pemakaian
+            i = 1;
+            while (i <= pemakaian) {
+                SubTotal = (tarifperKWH * i) + abodemen;
+                outputDiv.innerHTML += `
+                    <table cellpadding="30">
+                        <tr><td>${i}</td><td>${tarifperKWH * i}</td><td>${abodemen}</td><td>${SubTotal}</td></tr>
+                    </table>
+                `;
+                i += 1
+            }
+
+            pajak = pajak * SubTotal
+            outputDiv.innerHTML += `
+                <hr>
+                <p>Sub Total : ${SubTotal}</p>
+                <p>Pajak : ${pajak}</p>
+                <p>Bayar : ${SubTotal + pajak}</p>
+            `;
+        }
+
+        // menghapus elemen html rincian tagihan
+        function hapus() {
+            outputDiv.innerHTML = ``;
+        }
+    </script>
+</body>
+</html>

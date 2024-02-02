@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/w3.css">
+</head>
+<body>
+    <div class="w3-container">
+        <h2>FORMULIR DATA MAHASISWA IF-6</h2>
+        <div class="w3-card-4">
+            <div class="w3-container w3-green">
+                <h2>DATA SISWA</h2>
+            </div>
+            <form class="w3-container">
+                <p>
+                    <label>NIM</label>
+                    <input class="w3-input" type="text" name="nim">
+                </p>
+                <p> 
+                    <label>NAMA LENGKAP</label>
+                    <input class="w3-input" type="text" name="namalengkap">
+                </p>
+                <div class="w3-container w3-orange">
+                    <h2>Hoby Anda</h2>
+                </div>
+                <p>
+                    <input class="w3-check" type="checkbox" checked="checked" name="pascal">
+                    <label>Game</label>
+                </p>
+                <p>
+                    <input class="w3-check" type="checkbox" name="delphi">
+                    <label>Musik</label>
+                </p>
+                <p>
+                    <input class="w3-check" type="checkbox" disabled>
+                    <label>Makan (Disabled)</label>
+                </p>
+                <div class="w3-container w3-purple">
+                    <h2>Jenis Kelamin</h2>
+                </div>
+                <p>
+                    <input class="w3-radio" type="radio" name="gender" value="male" checked>
+                    <label>Pria</label>
+                </p>
+                <p>
+                    <input class="w3-radio" type="radio" name="gender" value="female">
+                    <label>Wanita</label>
+                </p>
+                <p>
+                    <input class="w3-radio" type="radio" name="gender" value="" disabled>
+                    <label>Tidak Tahu (Disabled)</label>
+                </p>
+                <div class="w3-container w3-green">
+                    <h2>Tempat Favorit</h2>
+                </div>
+                <select class="w3-select" name="option">
+                    <option value="" disabled selected>Pilih Salah Satu</option>
+                    <option value="1">Cafe</option>
+                    <option value="2">Taman</option>
+                    <option value="3">Gunung</option>
+                    <option value="4">Laut</option>
+                </select>
+                <br><br>
+                <button class="w3-button w3-orange w3-round-xxlarge">Kirim</button>
+                <button class="w3-button w3-orange w3-round-xxlarge">Batal</button>
+                <br><br>
+            </form>
+        </div>
+        <br><br>
+    </div>
+</body>
+</html>

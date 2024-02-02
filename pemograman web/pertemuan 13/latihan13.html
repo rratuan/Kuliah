@@ -1,0 +1,78 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+
+<div class="w3-container">
+	<center><h1>Membuat Tab Menu</h1></center>
+</div>
+
+<!-- yang membuat bar vertical atau horizontal -->
+<div class="w3-bar w3-cyan w3-card-4">
+    <!-- tombol bandung -->
+    <button class="w3-bar-item w3-button" onclick="openKota('Bandung')">Bandung</button>
+    <!-- tombol garut -->
+    <button class="w3-bar-item w3-button" onclick="openKota('Garut')">Garut</button>
+    <!-- tombol tasik -->
+    <button class="w3-bar-item w3-button" onclick="openKota('Tasik')">Tasik</button>
+    <!-- tombol dropdown virus -->
+    <div class="w3-dropdown-hover">
+        <button class="w3-button">Virus</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <!-- tombol virus worm -->
+            <button class="w3-bar-item w3-button" onclick="openKota('Worm')">Worm</button>
+            <!-- tombol virus trojan -->
+            <button class="w3-bar-item w3-button" onclick="openKota('Trojan')">Trojan</button>
+            <!-- tombol virus macro -->
+            <button class="w3-bar-item w3-button" onclick="openKota('Macro')">Macro</button>
+        </div>
+    </div>
+</div>
+<!--  -->
+
+<!-- ketika klik bandung -->
+<div id="Bandung" class="w3-container kota w3-animate-zoom w3-blue" style="display: none;">
+    <h2>Bandung</h2>
+</div>
+<!--  -->
+
+<!-- ketika klik garut -->
+<div id="Garut" class="w3-container kota w3-animate-zoom w3-orange" style="display: none;">
+    <h2>Garut</h2>
+    <p>Garut adalah kota dodol</p>
+</div>
+<!--  -->
+
+<!-- ketika kelik tasik -->
+<div id="Tasik" class="w3-container kota w3-animate-zoom w3-grey" style="display: none;">
+    <h2>Tasik</h2>
+</div>
+<!--  -->
+
+<!-- ketika kelik virus worm -->
+<div id="Worm" class="w3-container kota w3-animate-zoom w3-yellow" style="display: none;">
+    <h2>Worm</h2>
+</div>
+<!--  -->
+
+<!-- ketika kelik virus trojan -->
+<div id="Trojan" class="w3-container kota w3-animate-zoom w3-brown" style="display: none;">
+    <h2>Trojan</h2>
+</div>
+<!--  -->
+
+<!-- ketika kelik virus macro -->
+<div id="Macro" class="w3-container kota w3-animate-zoom w3-pink" style="display: none;">
+    <h2>Macro</h2>
+</div>
+<!--  -->
+
+<script>
+    function openKota(namaKota){
+        var i;
+        var x = document.getElementsByClassName("kota");
+        for (i = 0; i < x.length; i++){
+            x[i].style.display = "none";
+        }
+        document.getElementById(namaKota).style.display = "block";
+    }
+</script>
+
