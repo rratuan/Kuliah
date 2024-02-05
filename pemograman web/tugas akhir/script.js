@@ -11,11 +11,13 @@ function loadPage() {
 }
 
 function openMenu(namaHidangan) {
+    // menyembunyikan semua elemen yang mempunya kelas 'hidangan' dari halaman
     var i;
     var x = document.getElementsByClassName("hidangan");
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }
+    // menampilkan elemen berdasarkan id ke halaman
     document.getElementById(namaHidangan).style.display = "flex";
     // Simpan informasi halaman terakhir yang dikunjungi hanya jika halaman terakhir belum pernah disimpan
     var lastVisitedPage = sessionStorage.getItem('lastVisitedPage');
@@ -27,7 +29,7 @@ function openMenu(namaHidangan) {
 // function mengurangi jumlah pesanan
 function decreaseQuantity(button) {
     var quantityElement = button.nextElementSibling; // Menggunakan nextElementSibling untuk mendapatkan elemen berikutnya (span.quantity)
-    var currentQuantity = parseInt(quantityElement.innerText);
+    var currentQuantity = parseInt(quantityElement.innerText); //mengubah text pada span.quantity menjadi integer
     if (currentQuantity > 1) {
         quantityElement.innerText = currentQuantity - 1;
     }
@@ -36,7 +38,7 @@ function decreaseQuantity(button) {
 // function menambah jumlah pesanan
 function increaseQuantity(button) {
     var quantityElement = button.previousElementSibling; // Menggunakan previousElementSibling untuk mendapatkan elemen sebelumnya (span.quantity)
-    var currentQuantity = parseInt(quantityElement.innerText);
+    var currentQuantity = parseInt(quantityElement.innerText); //mengubah text pada span.quantity menjadi integer
     quantityElement.innerText = currentQuantity + 1;
 }
 
