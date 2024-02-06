@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiket KAI</title>
+    <link rel="stylesheet" href="css/w3.css">
+</head>
+<body>
+    <div class="container w3-margin">
+        <center>
+            <div class="title w3-blue-gray">
+                <h1>PENJUALAN TIKET KERETA API</h1>
+            </div>
+            <form name="myForm" class="w3-light-blue w3-margin-bottom w3-padding-16">
+                <table>
+                    <tr><td>KOTA TUJUAN</td><td>:</td><td><select name="kota">
+                        <option value="BANDUNG">BANDUNG</option>
+                        <option value="JAKARTA">JAKARTA</option>
+                        <option value="SURABAYA">SURABAYA</option>
+                    </select></td></tr>
+                    <tr><td>KELAS</td><td>:</td><td><input type="radio" name="kelas" value="EKONOMI">EKONOMI</td></tr>
+                    <tr><td></td><td></td><td><input type="radio" name="kelas" value="BISNIS">BISNIS</td></tr>
+                    <tr><td></td><td></td><td><input type="radio" name="kelas" value="EKSEKUTIF">EKSEKUTIF</td></tr>
+                    <tr><td>FASILITAS TAMBAHAN</td><td>:</td><td><input type="checkbox" name="makan">MAKAN</td></tr>
+                    <tr><td></td><td></td><td><input type="checkbox" name="wifi">WIFI</td></tr>
+                    <tr><td></td><td></td><td><input type="checkbox" name="minuman">MINUMAN</td></tr>
+                    <tr><td>JUMLAH TIKET</td><td>:</td><td><input type="text" name="jumlah"></td></tr>
+                    <tr><td>HARGA TIKET + TAMBAHAN</td><td>:</td><td><input type="text" name="htpt"></td></tr>
+                    <tr><td>SUB TOTAL</td><td>:</td><td><input type="text" name="subtotal"></td></tr>
+                    <tr><td>DISKON (%)</td><td>:</td><td><input type="text" name="diskon"></td></tr>
+                    <tr><td>TOTAL HARGA</td><td>:</td><td><input type="text" name="total"></td></tr>
+                </table>
+            </form>
+            <div class="button w3-blue-grey w3-padding-16">
+                <input type="button" name="proses" onclick="proses()" value="PROSES">
+                <input type="reset" name="reset" onclick="reset()" value="RESET">
+            </div>
+        </center>
+    </div>
+
+    <script>
+
+        function proses() {
+            let kota = document.myForm.kota.value;
+            let kelas = document.myForm.kelas.value;
+            let jumlah = parseInt(document.myForm.jumlah.value);
+            let harga = 0;
+            let total = 0;
+            let subtotal = 0;
+            let displayDiskon;
+            let diskon;
+
+            if (kota == "BANDUNG") {
+                if (kelas == "EKONOMI") {
+                    harga = 70000;
+                }
+                else if (kelas == "BISNIS") {
+                    harga = 80000;
+                }
+                else if (kelas == "EKSEKUTIF") {
+                    harga = 90000;
+                }
+            }
+            else if (kota == "JAKARTA") {
+                if (kelas == "EKONOMI") {
+                    harga = 100000;
+                }
+                else if (kelas == "BISNIS") {
+                    harga = 150000;
+                }
+                else if (kelas == "EKSEKUTIF") {
+                    harga = 200000;
+                }
+            }
+            else if (kota == "SURABAYA") {
+                if (kelas == "EKONOMI") {
+                    harga = 150000;
+                }
+                else if (kelas == "BISNIS") {
+                    harga = 200000;
+                }
+                else if (kelas == "EKSEKUTIF") {
+                    harga = 300000;
+                }
+            }
+
+            if (document.myForm.makan.checked) {
+                harga += 15000;
+            }
+            if (document.myForm.wifi.checked) {
+                harga += 10000;
+            }
+            if (document.myForm.minuman.checked) {
+                harga += 5000;
+            }
+
+            if (jumlah > 3) {
+                diskon = 0.1;
+                displayDiskon = 10;
+            }
+            else {
+                diskon = 0;
+                displayDiskon = 0;
+            }
+
+            subtotal = harga * jumlah;
+            total = subtotal - (subtotal * diskon);
+            document.myForm.htpt.value = harga;
+            document.myForm.subtotal.value = subtotal;
+            document.myForm.diskon.value = displayDiskon;
+            document.myForm.total.value = total;
+        }
+
+        function reset() {
+            document.myForm.reset();
+        }
+
+    </script>
+</body>
+</html>
